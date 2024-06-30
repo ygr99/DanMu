@@ -1,27 +1,28 @@
-name: CI Github Pages
+name: Build and Deploy
 on:
-  #监听push操作
   push:
     branches:
-      - main # 这里只配置了main分支，所以只有推送main分支才会触发以下任务
+      - main
 jobs:
-  # 任务ID
-  build-and-deploy:
-    # 运行环境
+  deploy:
     runs-on: ubuntu-latest
-    # 步骤
     steps:
-      # 官方action，将代码拉取到虚拟机
-      - name: Checkout  ️ 
+      - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Install and Build   # 安装依赖、打包，如果提前已打包好无需这一步
+      
+      - name: Install pnpm
         run: |
-          pnpm install
-          pnpm build
-
-      - name: Deploy   # 部署
+          curl -L https://get.pnpm.io/v6.js | node - add --global pnpm
+      
+      - name: Install dependencies
+        run: pnpm install
+      
+      - name: Build project
+        run: pnpm build
+      
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          branch: gh-pages # 部署后提交到那个分支
-          folder: dist # 这里填打包好的目录名称
+          branch: gh-pages
+          folder: dist  
+          clean: true  

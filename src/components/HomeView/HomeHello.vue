@@ -23,7 +23,7 @@ function changeMemes() {
 <template>
     <div class="hello">
         <div class="hello1">你好</div>
-        <div class="hello2">这是一个弹幕收集网站，来自 <a href="https://sb6657.cn/">6657超级大爆</a>；放一些弹幕方便回忆和复制 。</div>
+        <div class="hello2">这个网站叫时光弹幕集：自用的方便复制弹幕和弹幕回忆！源码来自 <a href="https://sb6657.cn/">6657超级大爆</a>。</div>
         <div class="random">
             <div class="r1">随机烂梗:</div>
             <div class="change" @click="changeMemes">换一换</div>

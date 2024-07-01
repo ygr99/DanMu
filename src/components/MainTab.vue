@@ -11,7 +11,7 @@ function navigateTo(path: string): void {
 </script>
 <template>
     <div class="tab">
-        <div :class="`home ${'/' === route.path ? 'selected' : 'none'}`" @click="navigateTo('/')">首页</div>
+        <div :class="`home ${'./' === route.path ? 'selected' : 'none'}`" @click="navigateTo('/')">首页</div>
         <div :class="`tab1 ${item.path === route.path ? 'selected' : 'none'}`" v-for="item in tabEle" :key="item.path" @click="navigateTo(item.path)">
             {{ item.text }}
         </div>

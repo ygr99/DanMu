@@ -24,7 +24,8 @@ export const useMemesStore = defineStore('memes', () => {
             // 文件内容，这里统一是一个放字符串的数组，里面是一条一条的烂梗
             const dataList = (module as { default: JsonData }).default;
             // 每次重新打开网页的时候，数据是重新排序的
-            tabDataMap.value[`/${name}`] = shuffleArray([...dataList]);
+            // tabDataMap.value[`/${name}`] = shuffleArray([...dataList]);
+            tabDataMap.value[`/${name}`] = [...dataList]; // 直接赋值，不进行重新排序
             combinedData.value = [...combinedData.value, ...dataList];
         });
     }

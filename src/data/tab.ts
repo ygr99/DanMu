@@ -1,6 +1,7 @@
 export const tabEle = [
-    { text: '收藏', path: '/use' },
-    { text: '酷酷超酷', path: '/kuku' }
+    { text: '默认', path: '/use' },
+    { text: '酷酷好', path: '/kukuhao' },
+    { text: '酷酷坏', path: '/kukuhuai' }
     // { text: '喷玩机器篇', path: '/fk-wjq' },
     // { text: '直播间互喷篇', path: '/fk-eachother' },
     // { text: '喷选手篇', path: '/fk-player' },
